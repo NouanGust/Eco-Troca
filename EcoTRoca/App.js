@@ -1,17 +1,13 @@
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 
 
-import SingInScreen from './src/screens/SignInScreen';
-import SingUpScreen from './src/screens/SingUpScreen/SingUpScreen';
-import ConfirmEmailScreen from './src/screens/ConfirmEmailScreen/ConfirmEmailScreen';
-import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen/ForgotPasswordScreen';
-import NewPasswordScreen from './src/screens/NewPasswordScreen'
 
+import Navigation from './src/navigation';
 
 const App = () => {
   return (
     <SafeAreaView style={styles.root}>
-      <NewPasswordScreen />
+      <Navigation />
     </SafeAreaView>
   );
 }

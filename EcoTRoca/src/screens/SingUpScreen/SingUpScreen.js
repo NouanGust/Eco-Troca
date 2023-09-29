@@ -4,18 +4,31 @@ import React, {useState} from 'react'
 import CustomInput from '../../components/CustomInput/CustomInput'
 import CustomButton from '../../components/CustomButtons/CustomButton'
 
+// Importar o hook de navegação
+import { useNavigation } from '@react-navigation/native'
+
 const SingUpScreen = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('');
     const [senhaConfirm, setSenhaConfirm] = useState('');
 
+    // Definindo meu 'navegador'
+    const navigation = useNavigation()
+
     const onCriarContaPress = () =>{
       console.warn('Criar Conta')
+      // Verificação
+
+      // Redirecionamento
+      navigation.navigate('Login')
     }
 
     const onJaTemContaPress = () => {
       console.warn('Já tem conta')
+
+      // Redirecionamento
+      navigation.navigate('Login')
     }
 
   return (

@@ -4,16 +4,27 @@ import React, {useState} from 'react'
 import CustomInput from '../../components/CustomInput/CustomInput'
 import CustomButton from '../../components/CustomButtons/CustomButton'
 
+import { useNavigation } from '@react-navigation/native'
+
 const NewPasswordScreen = () => {
   const [code, setCode] = useState('')
   const [newPassword, setNewPassword] = useState('')
 
+  const navigation = useNavigation();
+
   const onEnviarPress = () => {
     console.warn('Enviar')
+    // Verificação e troca de senha
+
+    // Redirecionamento
+    navigation.navigate('Login')
+
   }
 
   const onJaTemContaPress = () => {
     console.warn('Volta pro login')
+
+    navigation.navigate('Login')
   }
 
   return (

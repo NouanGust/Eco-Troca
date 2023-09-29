@@ -6,22 +6,37 @@ import Logo from '../../../assets/logoEcoTrocaTrasparente.png'
 import CustomInput from '../../components/CustomInput/CustomInput'
 import CustomButton from '../../components/CustomButtons/CustomButton'
 
+import { useNavigation } from '@react-navigation/native'
+
 const SingInScreen = () => {
     const {height} = useWindowDimensions();
 
     const [username, setUsername] = useState('');
     const [senha, setSenha] = useState('');
 
+    const navigation = useNavigation();
+
     const onLoginPress = () =>{
       console.warn('Login')
+      // verificação
+
+      // Redirecionamento
+      navigation.navigate('Home')
+      
     }
 
     const onEsqueceuPress = () => {
       console.warn('Esqueceu')
+
+      // Redirecionamento
+      navigation.navigate('ForgotPassword')
     }
 
     const onCriarContaPress = () => {
       console.warn('Criar Conta')
+
+      // Redirecionamento
+      navigation.navigate('Cadastro')
     }
 
   return (
