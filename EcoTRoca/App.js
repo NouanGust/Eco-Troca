@@ -5,11 +5,13 @@ import SingInScreen from './src/screens/SignInScreen';
 import SingUpScreen from './src/screens/SingUpScreen/SingUpScreen';
 import ConfirmEmailScreen from './src/screens/ConfirmEmailScreen/ConfirmEmailScreen';
 import ForgotPasswordScreen from './src/screens/ForgotPasswordScreen/ForgotPasswordScreen';
+import NewPasswordScreen from './src/screens/NewPasswordScreen'
+
 
 const App = () => {
   return (
     <SafeAreaView style={styles.root}>
-      <ForgotPasswordScreen></ForgotPasswordScreen>
+      <NewPasswordScreen />
     </SafeAreaView>
   );
 }

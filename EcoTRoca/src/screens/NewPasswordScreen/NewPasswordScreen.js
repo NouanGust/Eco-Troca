@@ -4,8 +4,9 @@ import React, {useState} from 'react'
 import CustomInput from '../../components/CustomInput/CustomInput'
 import CustomButton from '../../components/CustomButtons/CustomButton'
 
-const ForgotPasswordScreen = () => {
-  const [username, setUsername] = useState('')
+const NewPasswordScreen = () => {
+  const [code, setCode] = useState('')
+  const [newPassword, setNewPassword] = useState('')
 
   const onEnviarPress = () => {
     console.warn('Enviar')
@@ -20,13 +21,19 @@ const ForgotPasswordScreen = () => {
       <View style={styles.root}>
 
         <Text style={styles.titulo}>
-          Confirme seu usuário
+          Resetar senha
         </Text>
 
         <CustomInput
-          placeholder="Isira seu usuário"
-          value={username}
-          setValue={setUsername}
+          placeholder="Insira o código"
+          value={code}
+          setValue={setCode}
+        />
+
+        <CustomInput
+          placeholder="Insira sua nova Senha"
+          value={newPassword}
+          setValue={setNewPassword}
         />
 
         <CustomButton
@@ -68,4 +75,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default ForgotPasswordScreen
+export default NewPasswordScreen
