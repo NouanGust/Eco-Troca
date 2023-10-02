@@ -9,7 +9,7 @@ import CustomButton from '../../components/CustomButtons/CustomButton'
 import { useNavigation } from '@react-navigation/native'
 
 import {useForm, Controller} from "react-hook-form"
-import { auth } from '../../../firebase'
+// import { auth } from '../../../firebase'
 
 const SingInScreen = () => {
     const {height} = useWindowDimensions();
