@@ -9,6 +9,7 @@ import CustomButton from '../../components/CustomButtons/CustomButton'
 import { useNavigation } from '@react-navigation/native'
 
 import {useForm, Controller} from "react-hook-form"
+import { auth } from '../../../firebase'
 
 const SingInScreen = () => {
     const {height} = useWindowDimensions();
@@ -22,6 +23,7 @@ const SingInScreen = () => {
     const onLoginPress = (data) =>{
       console.log(data)
       // verificação
+      
 
       // Redirecionamento
       navigation.navigate('Home')

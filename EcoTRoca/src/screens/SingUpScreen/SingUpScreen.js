@@ -22,6 +22,10 @@ const SingUpScreen = () => {
   const onCriarContaPress = () =>{
     console.warn('Criar Conta')
     // Verificação
+    auth.createUserWithEmailAndPassword(control._fields['Email'], control._fields['Senha']).then(userCredencials => {
+      const user = userCredencials.user
+      console.log(user)
+    }).cath(error => alert(error.message))
 
     // Redirecionamento
     navigation.navigate('Login')
