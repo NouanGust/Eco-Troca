@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 import React from 'react'
 
 import { NavigationContainer } from '@react-navigation/native'
@@ -15,7 +15,7 @@ const Stack = createNativeStackNavigator()
 
 const Navigation = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer style={styles.root}>
       <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name = "Login" component={SingInScreen} />
         <Stack.Screen name = "Cadastro" component={SingUpScreen} />
@@ -27,5 +27,11 @@ const Navigation = () => {
     </NavigationContainer>
   )
 }
+
+const styles = StyleSheet.create({
+  root:{
+    backgroundColor: "#19B38C",
+  },
+})
 
 export default Navigation

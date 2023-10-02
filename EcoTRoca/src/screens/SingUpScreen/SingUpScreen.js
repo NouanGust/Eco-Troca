@@ -7,29 +7,32 @@ import CustomButton from '../../components/CustomButtons/CustomButton'
 // Importar o hook de navegação
 import { useNavigation } from '@react-navigation/native'
 
+// Importar hook form
+import {useForm, Controller} from 'react-hook-form'
+
+const EMAIL_REGEX = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
+
 const SingUpScreen = () => {
-    const [username, setUsername] = useState('');
-    const [email, setEmail] = useState('')
-    const [senha, setSenha] = useState('');
-    const [senhaConfirm, setSenhaConfirm] = useState('');
 
-    // Definindo meu 'navegador'
-    const navigation = useNavigation()
+  const {control, handleSubmit, formState: {errors}, watch} = useForm()
+  const senha = watch('Senha')
+  // Definindo meu 'navegador'
+  const navigation = useNavigation()
 
-    const onCriarContaPress = () =>{
-      console.warn('Criar Conta')
-      // Verificação
+  const onCriarContaPress = () =>{
+    console.warn('Criar Conta')
+    // Verificação
 
-      // Redirecionamento
-      navigation.navigate('Login')
-    }
+    // Redirecionamento
+    navigation.navigate('Login')
+  }
 
-    const onJaTemContaPress = () => {
-      console.warn('Já tem conta')
+  const onJaTemContaPress = () => {
+    console.warn('Já tem conta')
 
-      // Redirecionamento
-      navigation.navigate('Login')
-    }
+    // Redirecionamento
+    navigation.navigate('Login')
+  }
 
   return (
     <ScrollView>
@@ -40,33 +43,48 @@ const SingUpScreen = () => {
         </Text>
 
         <CustomInput
+          name='Usuário'
           placeholder="Username"
-          value={username}
-          setValue={setUsername}
+          control={control}
+          rules={{
+            required: 'Usuário é obrigatório'
+          }}
         />
 
         <CustomInput
+          name='Email'
           placeholder="Email"
-          value={email}
-          setValue={setEmail}
+          control={control}
+          rules={{
+            required: 'Email é obrigatório',
+            patter: EMAIL_REGEX,
+          }}
         />
 
         <CustomInput
+          name='Senha'
           placeholder="Senha"
-          value={senha}
-          setValue={setSenha}
-          SecureTextEntry={true}
+          control={control}
+          SecureTextEntry
+          rules={{ 
+            required:'A senha é obrigatória',
+            minLength: {value: 5, message: 'A senha deve ter 5 ou mais caracteres'},
+          }}
         />
 
         <CustomInput
+          name='Confrima-senha'
           placeholder="Confirme sua senha"
-          value={senhaConfirm}
-          setValue={setSenhaConfirm}
-          SecureTextEntry={true}
+          control={control}
+          SecureTextEntry
+          rules={{
+            required: 'Confirmar a senha é obrigatório',
+            validate: value => value === senha || 'A senha não confirma',
+          }}
         />
 
         <CustomButton
-          onPress={onCriarContaPress}
+          onPress={handleSubmit(onCriarContaPress)}
           text={"Criar Conta"}
         />
 

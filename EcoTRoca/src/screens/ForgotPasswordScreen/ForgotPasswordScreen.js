@@ -6,8 +6,10 @@ import CustomButton from '../../components/CustomButtons/CustomButton'
 
 import { useNavigation } from '@react-navigation/native'
 
+import {useForm} from 'react-hook-form' 
+
 const ForgotPasswordScreen = () => {
-  const [username, setUsername] = useState('')
+  const {control, handleSubmit} = useForm()
 
   const navigation = useNavigation();
 
@@ -33,13 +35,16 @@ const ForgotPasswordScreen = () => {
         </Text>
 
         <CustomInput
+          name='Usuario'
           placeholder="Isira seu usuário"
-          value={username}
-          setValue={setUsername}
+          control={control}
+          rules={{
+            required: 'O nome de usuário é obrigatório'
+          }}
         />
 
         <CustomButton
-          onPress={onEnviarPress}
+          onPress={handleSubmit(onEnviarPress)}
           text={"Enviar"}
         />
         

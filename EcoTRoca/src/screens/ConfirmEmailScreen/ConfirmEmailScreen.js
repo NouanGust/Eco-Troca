@@ -4,8 +4,10 @@ import React, {useState} from 'react'
 import CustomInput from '../../components/CustomInput/CustomInput'
 import CustomButton from '../../components/CustomButtons/CustomButton'
 
+import {useForm} from 'react-hook-form'
+
 const ConfirmEmailScreen = () => {
-  const [code, setCode] = useState('')
+  const {control, handleSubmit, formState: {errors}} = useForm
 
   const onConfirmarPress = () => {
     console.warn('confirmar')
@@ -28,13 +30,16 @@ const ConfirmEmailScreen = () => {
         </Text>
 
         <CustomInput
-          placeholder="Isira o código"
-          value={code}
-          setValue={setCode}
+          name='Codigo'
+          placeholder="Insira o código"
+          control={control}
+          rules={{
+            required: 'O código de verificação é obrigatório'
+          }}
         />
 
         <CustomButton
-          onPress={onConfirmarPress}
+          onPress={handleSubmit(onConfirmarPress)}
           text={"Confirmar"}
         />
         
