@@ -1,11 +1,10 @@
 import { View, Text, StyleSheet, Image, useWindowDimensions, Pressable } from 'react-native'
 import React from 'react'
 
-import {createDrawerNavigator} from '@react-navigation/drawer'
 
 import Logo from '../../../assets/logoEcoTrocaTrasparente.png'
 
-import Drawable from '../../screens/Drawable/Drawable'
+
 
 const Header = () => {
     const {height} = useWindowDimensions()
@@ -20,15 +19,13 @@ const Header = () => {
                 resizeMode="contain"
             />
 
-            <Drawable></Drawable>
-
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     headerContainer:{
-        backgroundColor: '#10735A',
+        backgroundColor: '#0C5946',
     }
 })
 

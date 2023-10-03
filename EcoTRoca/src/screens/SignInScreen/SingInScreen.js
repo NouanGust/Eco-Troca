@@ -26,7 +26,7 @@ const SingInScreen = () => {
       
 
       // Redirecionamento
-      navigation.navigate('Home')
+      navigation.navigate('Troca')
       
     }
 
