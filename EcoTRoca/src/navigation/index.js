@@ -14,6 +14,8 @@ import NewPasswordScreen from '../screens/NewPasswordScreen'
 import HomeScreen from '../screens/HomeScreen';
 import Mapa from '../screens/MapScreen/MapScreen';
 import TrocaScreen from '../screens/TrocaScreen/TrocaScreen';
+import AddItemScreen from '../screens/AddItemScreen/AddItemScreen';
+import ChatScreen from '../screens/ChatScreen/ChatScreen';
 
 
 const Stack = createNativeStackNavigator() 
@@ -23,8 +25,10 @@ const Navigation = () => {
   return (
     <NavigationContainer style={styles.root}>
       <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name = "Troca" component={TrocaScreen} />
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name = "Chat" component={ChatScreen} />
+        <Stack.Screen name = "AddItem" component={AddItemScreen} />
+        <Stack.Screen name = "HomeTroca" component={TrocaScreen} />
+        <Stack.Screen name = "Home" component={HomeScreen} />
         <Stack.Screen name = "Login" component={SingInScreen} />
         <Stack.Screen name = "Cadastro" component={SingUpScreen} />
         <Stack.Screen name = "ConfirmEmail" component={ConfirmEmailScreen} />

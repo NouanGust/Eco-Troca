@@ -3,7 +3,7 @@ import React from 'react'
 
 import { Controller } from 'react-hook-form'
 
-const CustomInput = ({control, name, rules={},  placeholder, SecureTextEntry,}) => {
+const CustomInput = ({control, name, rules={},  placeholder, SecureTextEntry, multiline=false, NumberOfLines=1}) => {
   return (
         <Controller 
           control={control}
@@ -20,6 +20,8 @@ const CustomInput = ({control, name, rules={},  placeholder, SecureTextEntry,}) 
                   placeholder={placeholder} 
                   onChangeText={onChange} 
                   onBlur={onBlur}
+                  multiline={multiline}
+                  NumberOfLines={NumberOfLines}
                   style={[styles.input, {borderBlockColor: error ? 'red' : '#e8e8e8'}]}
                   secureTextEntry={SecureTextEntry}
                 />

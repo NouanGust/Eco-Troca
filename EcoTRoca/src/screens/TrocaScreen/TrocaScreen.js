@@ -7,35 +7,32 @@ import { FontAwesome } from '@expo/vector-icons';
 import {AntDesign} from '@expo/vector-icons'
 import {Ionicons} from '@expo/vector-icons'
 
+import { useNavigation } from '@react-navigation/native';
+
 import CustomInput from '../../components/CustomInput/CustomInput'
 import CustomButton from '../../components/CustomButtons/CustomButton'
 
-import Itens from '../../components/Item/Item'
+import ItensTroca from '../../components/ItensTroca';
+import MenuTroca from '../../components/MenuTroca/MenuTroca';
+import MenuInferior from '../../components/MenuInferior/MenuInferior';
+
 
 
 const TrocaScreen = () => {
+    const navigation = useNavigation()
+
   return (
     <View>
         <Header />
 
         <View>
             <Text style={styles.titulo}>Itens Disponiveis</Text>
-            <Itens />
+            <ItensTroca />
         </View>
 
-        <View style={styles.menuTroca}>
-            <Pressable>
-                <AntDesign name='addfile' size={35} color='white' />
-            </Pressable>
+        <MenuTroca />
 
-            <Pressable>
-                <Ionicons name='md-chatbubble-outline' size={35} color='white' />
-            </Pressable>
 
-            <Pressable>
-                <FontAwesome name='home' size={35} color='white' />
-            </Pressable>
-        </View>
     </View>
   )
 }

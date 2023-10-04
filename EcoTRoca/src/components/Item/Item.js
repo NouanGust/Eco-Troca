@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { View, StyleSheet, Image, Text, TouchableOpacity} from "react-native"
+import { View, StyleSheet, Image, Text, Pressable} from "react-native"
 
 const Item = props => {
 
@@ -9,13 +9,13 @@ const Item = props => {
 
             <View style={styles.imageContainer}>
 
-                <TouchableOpacity onPress={ () => setTexto(props.texto) }>
+                <Pressable onPress={ () => setTexto(props.texto) }>
                     <Image
                         source={props.src}
                         style={styles.imagemItem}
 
                     />
-                </TouchableOpacity>
+                </Pressable>
 
 
 
