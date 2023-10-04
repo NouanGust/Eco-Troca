@@ -52,16 +52,20 @@ const Item = props => {
 const produtos = [
     {id: 1, name: "Oléo", src: "oleo.png", texto: "A forma correta de descartar esse tipo de material é...", descricao: "uma breve descrição do item",},
     {id: 2, name: "Garrafa Pet", src: "pet.png", texto: "A forma correta de descartar esse tipo de material é...", descricao: "Uma breve descrição do item",},
-    {id: 3, name: "Pilhas", src: "pilhas.png", texto: "A forma correta de descartar esse tipo de material é...", descricao: "Uma breve descrição do item",}
+    {id: 3, name: "Pilhas", src: "pilhas.png", texto: "A forma correta de descartar esse tipo de material é...", descricao: "Uma breve descrição do item",},
+    
 ]
 
 const Itens = () => {
 
     return(
+
+        
         <View>
-            <Item name={produtos[0].name} src={require(`../../../assets/${produtos[0].src}`)} texto={produtos[0].texto} descricao={produtos[0].descricao} />
+            {produtos.map((produtos) => <Item name={produtos.name} src={require(`../../../assets/${produtos.src}`)} texto={produtos.texto} descricao={produtos.descricao} />)}
+            {/* <Item name={produtos[0].name} src={require(`../../../assets/${produtos[0].src}`)} texto={produtos[0].texto} descricao={produtos[0].descricao} />
             <Item name={produtos[1].name} src={require(`../../../assets/${produtos[1].src}`)} texto={produtos[1].texto} descricao={produtos[1].descricao} />
-            <Item name={produtos[2].name} src={require(`../../../assets/${produtos[2].src}`)} texto={produtos[2].texto} descricao={produtos[2].descricao} />
+            <Item name={produtos[2].name} src={require(`../../../assets/${produtos[2].src}`)} texto={produtos[2].texto} descricao={produtos[2].descricao} /> */}
         </View>
 
     )

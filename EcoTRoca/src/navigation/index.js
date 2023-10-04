@@ -25,9 +25,9 @@ const Navigation = () => {
   return (
     <NavigationContainer style={styles.root}>
       <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen name = "HomeTroca" component={TrocaScreen} />
         <Stack.Screen name = "Chat" component={ChatScreen} />
         <Stack.Screen name = "AddItem" component={AddItemScreen} />
-        <Stack.Screen name = "HomeTroca" component={TrocaScreen} />
         <Stack.Screen name = "Home" component={HomeScreen} />
         <Stack.Screen name = "Login" component={SingInScreen} />
         <Stack.Screen name = "Cadastro" component={SingUpScreen} />
