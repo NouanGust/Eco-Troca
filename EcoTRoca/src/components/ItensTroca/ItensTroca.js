@@ -50,9 +50,9 @@ const Item = props => {
 }
 
 const produtos = [
-    {id: 1, name: "Oléo", src: "oleo.png", texto: "A forma correta de descartar esse tipo de material é...", descricao: "uma breve descrição do item",},
-    {id: 2, name: "Garrafa Pet", src: "pet.png", texto: "A forma correta de descartar esse tipo de material é...", descricao: "Uma breve descrição do item",},
-    {id: 3, name: "Pilhas", src: "pilhas.png", texto: "A forma correta de descartar esse tipo de material é...", descricao: "Uma breve descrição do item",},
+    {id: 1, name: "Sofá usado", src: "sofa.jpg", texto: "A forma correta de descartar esse tipo de material é...", descricao: " Sofá de dois lugares usado e em bom estado.",},
+    {id: 2, name: "Kit pilhas", src: "pilhas-troca.jpg", texto: "A forma correta de descartar esse tipo de material é...", descricao: "Kit de pilhas usadas, apenas para descarte.",},
+    {id: 3, name: "Kit de panelas", src: "panelas.jpg", texto: "A forma correta de descartar esse tipo de material é...", descricao: "Kit de panelas usadas em bom estado.",},
     
 ]
 
